@@ -1,6 +1,6 @@
 # cdrle
 
-Canonical Calldata RLE — a simple, bounded, streaming run-length encoding specialized for Ethereum calldata.
+Calldata RLE — a simple, bounded run-length encoding specialized for Ethereum calldata.
 
 - Literals: any byte != `0x00`
 - Runs: `(0x00, CONTROL)` where `bit7=0→zeros`, `bit7=1→0xFF`, `low7=(len-1)`
