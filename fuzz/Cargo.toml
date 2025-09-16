@@ -1,0 +1,24 @@
+[package]
+name = "cdrle-fuzz"
+version = "0.1.0"
+publish = false
+edition = "2021"
+
+[package.metadata]
+cargo-fuzz = true
+
+[dependencies]
+libfuzzer-sys = "0.4"
+
+# Depend on the local crate under test.
+[dependencies.cdrle]
+path = ".."
+features = []    # or ["std"] if you enabled that feature
+
+[[bin]]
+name = "roundtrip"
+path = "fuzz_targets/roundtrip.rs"
+
+[[bin]]
+name = "decode_no_panic"
+path = "fuzz_targets/decode_no_panic.rs"

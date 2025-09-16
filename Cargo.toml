@@ -1,0 +1,22 @@
+[package]
+name = "cdrle"
+version = "0.1.0"
+edition = "2021"
+rust-version = "1.64"
+license = "CC0-1.0"
+repository = "https://github.com/Vectorized/cdrle"
+description = "Calldata RLE: simple, bounded run-length encoding for Ethereum calldata."
+keywords = ["ethereum", "evm", "calldata", "compression", "rle"]
+categories = ["compression", "cryptography::cryptocurrencies", "no-std"]
+
+[features]
+# Default just enables std for tests/benches/examples.
+default = ["std"]
+std = []
+
+[lib]
+path = "src/lib.rs"
+
+[package.metadata.docs.rs]
+all-features = true
+rustdoc-args = ["--cfg", "docsrs"]
